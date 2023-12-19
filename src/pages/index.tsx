@@ -12,7 +12,7 @@ export default function Home() {
         <title>Portfolio | Homepage</title>
       </Head>
       <section
-        className={`flex min-h-screen flex-col items-center justify-between px-8 pt-24 pb-8 tracking-wide md:px-6`}
+        className={`flex min-h-screen flex-col items-center justify-between px-8 pt-24 pb-8 tracking-wide md:px-6 xs:px-2`}
       >
         <motion.article
           className="max-w-lg"
@@ -22,7 +22,6 @@ export default function Home() {
             exit: { opacity: 0, y: 10 },
           }}
         >
-          
           <Hero />
 
           <motion.hr
@@ -63,8 +62,8 @@ export default function Home() {
                 visible: { opacity: 1 },
               }}
             >
-              Go to Church, Working Out, Playing Soccer,
-              Gaming, Travelling & Hanging Out with Family and Friends.
+              Go to church, working out, playing soccer, gaming, travelling &
+              hanging out with family and friends.
             </motion.p>
           </motion.div>
         </motion.article>

@@ -1,7 +1,4 @@
 import { motion } from "framer-motion"
-import Image from "next/image";
-import Sample from "../../public/react.svg"
-import Link from "next/link";
 import Head from "next/head";
 import GrocerGo from "@/components/GrocerGo";
 import OtherProjects from "@/components/other_projects/OtherProjects";
