@@ -10,6 +10,7 @@ import { FaGithub } from "react-icons/fa";
 
 const GrocerGo = () => {
   const [hovered, setHovered] = useState<boolean>(false);
+	const [imgLoaded, setImgLoaded] = useState<boolean>(false);
 
   return (
     <motion.div
@@ -27,7 +28,7 @@ const GrocerGo = () => {
         href="https://grocergo.vercel.app/"
         target="_blank"
         className="relative overflow-hidden w-fit h-fit flex justify-center rounded-xl"
-      >
+      >							
         <Image
           src={grocergo}
           alt="grocergo website frontpage screenshot"
@@ -35,15 +36,19 @@ const GrocerGo = () => {
           height={492}
           priority
           loading="eager"
+					onLoad={() => setImgLoaded(true)}
           className={`rounded-xl aspect-[16/8] shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] 
 					transition duration-300 ease-in-out border ${
             hovered ? "border-neutral-850" : "border-transparent"
           }`}
         />
 
+				{/* skeleton */}
+				{!imgLoaded && <motion.div className="absolute w-full h-full z-20 rounded-xl animate-pulse bg-gradient-to-br from-neutral-300 to-neutral-400 dark:from-neutral-700 dark:to-neutral-850" />}
+
         {/* overlay */}
         <motion.div
-          className={`w-full h-full flex xl:hidden flex-col items-center justify-center rounded-xl absolute dark:bg-black/70 bg-black/70 transition-opacity ease-in-out duration-300 ${
+          className={`w-full h-full z-10 flex xl:hidden flex-col items-center justify-center rounded-xl absolute dark:bg-black/70 bg-black/70 transition-opacity ease-in-out duration-300 ${
             hovered ? "opacity-100" : "opacity-0"
           } border border-neutral-850`}
           onHoverStart={() => setHovered(true)}
@@ -75,7 +80,7 @@ const GrocerGo = () => {
         </motion.div>
 
         {/* mobile overlay */}
-        <div className="w-full hidden h-full xl:flex flex-col items-center justify-center rounded-xl absolute bg-black/70 border dark:border-neutral-850 border-transparent">
+        <div className="w-full hidden z-10 h-full xl:flex flex-col items-center justify-center rounded-xl absolute bg-black/70 border dark:border-neutral-850 border-transparent">
           <h3 className="text-slate-50 tracking-wider">GrocerGo Store</h3>
 
           <div className="text-sm xs:text-[0.8rem] flex gap-2">

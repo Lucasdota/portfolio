@@ -28,11 +28,6 @@ const OtherProjects = () => {
         role="separator"
         className="w-64 h-[1px] dark:bg-neutral-700 bg-neutral-300"
       />
-      <Blog />
-      <div
-        role="separator"
-        className="w-64 h-[1px] dark:bg-neutral-700 bg-neutral-300"
-      />
       <Quote />
       <div
         role="separator"
@@ -44,6 +39,11 @@ const OtherProjects = () => {
         className="w-64 h-[1px] dark:bg-neutral-700 bg-neutral-300"
       />
       <Timer />
+      <div
+        role="separator"
+        className="w-64 h-[1px] dark:bg-neutral-700 bg-neutral-300"
+      />
+      <Blog />
       <div
         role="separator"
         className="w-64 h-[1px] dark:bg-neutral-700 bg-neutral-300"

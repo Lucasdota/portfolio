@@ -9,6 +9,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Quote = () => {
 	const [hovered, setHovered] = useState<boolean>(false);
+	const [imgLoaded, setImgLoaded] = useState<boolean>(false);
 
   return (
     <motion.div
@@ -33,6 +34,7 @@ const Quote = () => {
           height={490}
           priority
           loading="eager"
+          onLoad={() => setImgLoaded(true)}
           className={`rounded-xl aspect-[16/8] shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] transition duration-300 ease-in-out border ${
             hovered
               ? "dark:border-neutral-850 border-transparent"
@@ -40,9 +42,14 @@ const Quote = () => {
           }`}
         />
 
+        {/* skeleton */}
+        {!imgLoaded && (
+          <motion.div className="absolute w-full h-full z-20 rounded-xl animate-pulse bg-gradient-to-br from-neutral-300 to-neutral-400 dark:from-neutral-700 dark:to-neutral-850" />
+        )}
+
         {/* overlay */}
         <motion.div
-          className={`w-full h-full flex flex-col xl:hidden items-center justify-center rounded-xl absolute bg-black/70 transition-opacity ease-in-out duration-300 ${
+          className={`z-10 w-full h-full flex flex-col xl:hidden items-center justify-center rounded-xl absolute bg-black/70 transition-opacity ease-in-out duration-300 ${
             hovered ? "opacity-100" : "opacity-0"
           } border dark:border-neutral-850 border-transparent`}
           onHoverStart={() => setHovered(true)}
@@ -74,7 +81,7 @@ const Quote = () => {
         </motion.div>
 
         {/* mobile overlay */}
-        <div className="w-full hidden h-full xl:flex flex-col items-center justify-center rounded-xl absolute bg-black/70 border dark:border-neutral-850 border-transparent">
+        <div className="z-10 w-full hidden h-full xl:flex flex-col items-center justify-center rounded-xl absolute bg-black/70 border dark:border-neutral-850 border-transparent">
           <h3 className="text-slate-50 tracking-wider">Quote Generator</h3>
 
           <div className="text-sm xs:text-[0.8rem] flex gap-2">
