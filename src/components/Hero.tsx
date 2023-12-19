@@ -10,8 +10,11 @@ import Profile from "../../public/profile.webp";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import React from "../../public/react.svg";
+import { useState } from "react";
 
 const Hero = () => {
+	const [imgLoaded, setImgLoaded] = useState<boolean>(false);
+
   return (
     <motion.div
       className="w-full mb-12"
@@ -29,13 +32,22 @@ const Hero = () => {
         </h2>
         <div
           id="prof-pic"
-          className="w-52 h-52 3xl:w-64 3xl:h-64 mx-auto rounded-full p-1 bg-gradient-to-b from-[#3c88a7] to-[#ca8e8e]"
+          className="w-52 h-52 3xl:w-64 3xl:h-64 mx-auto rounded-full p-1 bg-gradient-to-b from-[#3c88a7] to-[#ca8e8e] relative"
         >
           <Image
             src={Profile}
             alt="profile pic"
+            width={640}
+            height={640}
+            priority
+            loading="eager"
+            onLoad={() => setImgLoaded(true)}
             className="rounded-full w-full h-full"
           />
+          {/* skeleton */}
+          {!imgLoaded && (
+            <motion.div className="absolute top-0 left-0 w-full h-full rounded-full animate-pulse bg-gradient-to-br from-neutral-300 to-neutral-400 dark:from-neutral-700 dark:to-neutral-850" />
+          )}
         </div>
         <p className="text-center text-[0.95rem] 3xl:text-lg 3xl:py-3 py-2 border dark:border-neutral-600 rounded-lg border-dashed border-neutral-400 antialiased px-2">
           Hello, I&apos;m a web developer living in São Paulo, Brazil.
