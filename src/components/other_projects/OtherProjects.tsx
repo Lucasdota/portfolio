@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import Gym from "./Gym";
-import Blog from "./Blog";
 import Drum from "./Drum";
 import Quote from "./Quote";
 import Calculator from "./Calculator";
 import Timer from "./Timer";
+import Weather from "./Weather";
 
 const OtherProjects = () => {
   return (
@@ -18,6 +18,11 @@ const OtherProjects = () => {
         visible: { opacity: 1, y: 0 },
       }}
     >
+      <Weather />
+      <div
+        role="separator"
+        className="w-64 h-[1px] dark:bg-neutral-700 bg-neutral-300"
+      />
       <Gym />
       <div
         role="separator"
@@ -39,11 +44,6 @@ const OtherProjects = () => {
         className="w-64 h-[1px] dark:bg-neutral-700 bg-neutral-300"
       />
       <Timer />
-      <div
-        role="separator"
-        className="w-64 h-[1px] dark:bg-neutral-700 bg-neutral-300"
-      />
-      <Blog />
       <div
         role="separator"
         className="w-64 h-[1px] dark:bg-neutral-700 bg-neutral-300"

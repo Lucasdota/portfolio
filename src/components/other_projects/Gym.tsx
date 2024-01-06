@@ -74,10 +74,10 @@ const Gym = () => {
               transition: { delay: hovered ? 0.3 : 0 },
             }}
           >
-            <p className="text-lime-300">#nextjs</p>
             <p className="text-amber-300">#react</p>
             <p className="text-sky-300">#tailwindcss</p>
             <p className="text-rose-300">#framermotion</p>
+            <p className="text-lime-300">#nextjs</p>
           </motion.div>
         </motion.div>
 
@@ -86,10 +86,10 @@ const Gym = () => {
           <h3 className="text-slate-50 tracking-wider">GymIt</h3>
 
           <div className="text-sm xs:text-[0.8rem] flex gap-2">
-            <p className="text-lime-300">#nextjs</p>
             <p className="text-amber-300">#react</p>
             <p className="text-sky-300">#tailwindcss</p>
             <p className="text-rose-300">#framermotion</p>
+            <p className="text-lime-300">#nextjs</p>
           </div>
         </div>
       </Link>

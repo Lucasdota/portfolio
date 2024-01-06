@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import blog from "../../../public/projects/blog-ss.webp";
+import weather from "../../../public/projects/weather-ss.webp";
 import { TbSeparatorVertical } from "react-icons/tb";
 import { CgWebsite } from "react-icons/cg";
 import { FaGithub } from "react-icons/fa";
 
-const Blog = () => {
-	const [hovered, setHovered] = useState<boolean>(false);
-	const [imgLoaded, setImgLoaded] = useState<boolean>(false);
+const Weather = () => {
+  const [hovered, setHovered] = useState<boolean>(false);
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false);
 
   return (
     <motion.div
@@ -23,13 +23,13 @@ const Blog = () => {
       }}
     >
       <Link
-        href="https://nextjs-blog-lucasdota.vercel.app/"
+        href="https://weather-app-lucasdota.vercel.app/"
         target="_blank"
         className="relative overflow-hidden w-fit h-fit flex justify-center rounded-xl"
       >
         <Image
-          src={blog}
-          alt="blog website frontpage screenshot"
+          src={weather}
+          alt="weather website frontpage screenshot"
           width={1024}
           height={491}
           priority
@@ -63,7 +63,7 @@ const Blog = () => {
               transition: { delay: hovered ? 0.2 : 0.1 },
             }}
           >
-            Blog
+            Weather App
           </motion.h3>
 
           <motion.div
@@ -74,18 +74,22 @@ const Blog = () => {
               transition: { delay: hovered ? 0.3 : 0 },
             }}
           >
-            <p className="text-lime-300">#nextjs</p>
+            <p className="text-purple-300">#redux</p>
             <p className="text-amber-300">#react</p>
+            <p className="text-sky-300">#tailwindcss</p>
+            <p className="text-lime-300">#nextjs</p>
           </motion.div>
         </motion.div>
 
         {/* mobile overlay */}
         <div className="w-full z-10 hidden h-full xl:flex flex-col items-center justify-center rounded-xl absolute bg-black/70 border dark:border-neutral-850 border-transparent">
-          <h3 className="text-slate-50 tracking-wider">Blog</h3>
+          <h3 className="text-slate-50 tracking-wider">Weather App</h3>
 
           <div className="text-sm xs:text-[0.8rem] flex gap-2">
-            <p className="text-lime-300">#nextjs</p>
+            <p className="text-purple-300">#redux</p>
             <p className="text-amber-300">#react</p>
+            <p className="text-sky-300">#tailwindcss</p>
+            <p className="text-lime-300">#nextjs</p>
           </div>
         </div>
       </Link>
@@ -96,7 +100,7 @@ const Blog = () => {
           <Link
             aria-label="go to gymit website"
             target="_blank"
-            href="https://nextjs-blog-lucasdota.vercel.app/"
+            href="https://weather-app-lucasdota.vercel.app/"
             className="underline dark:decoration-neutral-300 decoration-neutral-500 underline-offset-2 dark:hover:text-green-400 dark:hover:decoration-green-400 dark:active:decoration-green-600 dark:active:text-green-600 hover:decoration-green-600 active:decoration-green-800 hover:text-green-600 active:text-green-800 px-1"
           >
             Website
@@ -109,7 +113,7 @@ const Blog = () => {
           <Link
             aria-label="go to gymit github repository"
             target="_blank"
-            href="https://github.com/Lucasdota/nextjs-blog"
+            href="https://github.com/Lucasdota/weather-app"
             className="underline dark:decoration-neutral-300 decoration-neutral-500 underline-offset-2 dark:hover:text-green-400 dark:hover:decoration-green-400 dark:active:decoration-green-600 dark:active:text-green-600 hover:decoration-green-600 active:decoration-green-800 hover:text-green-600 active:text-green-800 px-1"
           >
             Repository
@@ -120,4 +124,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Weather;
