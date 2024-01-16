@@ -33,7 +33,7 @@ const Roadmap = () => {
         />
         <ul className="h-full ml-[3.01rem] relative ">
           <Objectives
-            year={2022}
+            year={2023}
             description="Started learning how to code."
             className={"absolute top-0"}
           />

@@ -50,7 +50,7 @@ const Hero = () => {
           )}
         </div>
         <p className="text-center text-[0.95rem] 3xl:text-lg 3xl:py-3 py-2 border dark:border-neutral-600 rounded-lg border-dashed border-neutral-400 antialiased px-2">
-          Hello, I&apos;m a web developer living in São Paulo, Brazil.
+          Hello, I&apos;m a react developer living in São Paulo, Brazil.
         </p>
         <ul id="tech-stack" className="flex gap-5 3xl:gap-6 flex-wrap">
           <h3 className="font-bold text-xl 3xl:text-2xl antialiased">
