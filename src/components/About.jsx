@@ -46,7 +46,7 @@ const About = () => {
       >
         <Link
           id="resume"
-          href="/Resume.pdf"
+          href="/LD-Resume.pdf"
           target="_blank"
           className="text-center inline-block relative text-slate-50 bg-primary text-sm py-3 w-[8rem] overflow-hidden rounded-lg btn btn-effect font-bold antialiased 3xl:text-lg 3xl:w-[9rem]"
         >
