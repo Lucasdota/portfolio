@@ -84,9 +84,9 @@ const Accordion = () => {
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
   const [detailsExpandedItems, setDetailsExpandedItems] = useState<number[]>([]);
 	  
-	//The id represents the unique identifier of the accordion item you want to toggle.
+	//The id represents the unique identifier of the accordion item you want to toggle
 	const toggleAccordion = (id: number) => {
-		//This is an if statement that checks whether the id is already present in the expandedItems array.
+		//This is an if statement that checks whether the id is already present in the expandedItems array
 		if (expandedItems.includes(id)) {
 			//If the id is already in the expandedItems array (indicating that the accordion item is expanded), this line of code removes the id from the expandedItems array by using the filter method. It creates a new array with all IDs except the one that matches the id passed as an argument. This effectively collapses the accordion item.
 			setExpandedItems(expandedItems.filter((item) => item !== id));
