@@ -1,7 +1,7 @@
 import Javascript from "../../public/javascript.svg";
 import Typescript from "../../public/typescript.svg";
 import Tailwind from "../../public/tailwind-css.svg";
-import Nextjs from "../../public/nextjs.svg";
+import SQL from "../../public/sql.svg";
 import Git from "../../public/git.svg";
 import Html from "../../public/html.svg";
 import CSS from "../../public/css.svg";
@@ -50,7 +50,7 @@ const Hero = () => {
           )}
         </div>
         <p className="text-center text-[0.95rem] 3xl:text-lg 3xl:py-3 py-2 border dark:border-neutral-600 rounded-lg border-dashed border-neutral-400 antialiased px-2">
-          Hello, I&apos;m a react developer living in São Paulo, Brazil.
+          Hello, I&apos;m a web developer based in São Paulo, Brazil.
         </p>
         <ul id="tech-stack" className="flex gap-5 3xl:gap-6 flex-wrap">
           <h3 className="font-bold text-xl 3xl:text-2xl antialiased">
@@ -62,15 +62,6 @@ const Hero = () => {
                 src={React}
                 alt="react icon"
                 className="w-7 h-7 3xl:w-8 3xl:h-8"
-              />
-            </Tooltip>
-          </li>
-          <li className="bg-slate-100 rounded-lg p-1 h-7 w-7 flex items-center">
-            <Tooltip title="Nextjs" arrow>
-              <Image
-                src={Nextjs}
-                alt="nextjs icon"
-                className="w-7 h-7 3xl:w-8 3xl:h-8 text-slate-50"
               />
             </Tooltip>
           </li>
@@ -125,6 +116,15 @@ const Hero = () => {
                 src={CSS}
                 alt="css icon"
                 className="w-7 h-7 3xl:w-8 3xl:h-8"
+              />
+            </Tooltip>
+          </li>
+          <li className="rounded-lg p-1 h-7 w-7 flex items-center bg-primary dark:bg-transparent">
+            <Tooltip title="SQL" arrow>
+              <Image
+                src={SQL}
+                alt="SQL icon"
+                className="w-7 h-7 3xl:w-8 3xl:h-8 text-slate-50"
               />
             </Tooltip>
           </li>
