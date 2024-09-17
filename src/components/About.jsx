@@ -26,10 +26,10 @@ const About = () => {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        I am currently focused on securing my first job as a web
+        I am thirty years old, currently focused on securing my first job as a web
         developer, eager to kickstart my career in the tech industry. After
         that, I plan to study back-end technologies to enhance my programming
-        skills. My biggest project, for sure, is the GrocerGo website, where I applied all the front-end knowledge that I have learned so far. Please reach out to me to explore potential
+        skills. My biggest project is the GrocerGo website, where I applied all the front-end knowledge that I have learned so far. Please reach out to me to explore potential
         collaborations and learn more about my skills and experience.
       </motion.p>
       <motion.div
