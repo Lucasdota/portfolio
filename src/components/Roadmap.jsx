@@ -34,22 +34,22 @@ const Roadmap = () => {
         <ul className="h-full ml-[3.01rem] relative ">
           <Objectives
             year={2023}
-            description="Started learning how to code."
+            description="Start studying how to code."
             className={"absolute top-0"}
           />
           <Objectives
-            year={2024}
-            description="Get my first job in the tech industry."
-            className={"absolute top-16"}
+            year={2025}
+            description="Get my first job in tech."
+            className={"absolute top-24"}
           />
           <Objectives
-            year={2026}
-            description="Become a mid-level developer."
-            className={"absolute top-44"}
+            year={2027}
+            description="Graduate."
+            className={"absolute top-[12rem]"}
           />
           <Objectives
             year={2029}
-            description="Become a senior developer."
+            description="Become an experienced developer."
             className={"absolute -bottom-2"}
           />
         </ul>
