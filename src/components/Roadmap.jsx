@@ -6,7 +6,7 @@ const Roadmap = () => {
   const divContainer = useRef(null);
   const { scrollYProgress } = useScroll({
     target: divContainer,
-    offset: ["start end", "start center"],
+    offset: ["start end", "end end"],
   });
 
   return (
@@ -34,23 +34,23 @@ const Roadmap = () => {
         <ul className="h-full ml-[3.01rem] relative ">
           <Objectives
             year={2023}
-            description="Start studying how to code."
+            description="Started learning how to code."
             className={"absolute top-0"}
           />
           <Objectives
             year={2025}
-            description="Get my first job in tech."
+            description="Got my first job as a developer."
             className={"absolute top-24"}
           />
           <Objectives
             year={2027}
-            description="Graduate."
+            description="Graduate from university."
             className={"absolute top-[12rem]"}
           />
           <Objectives
             year={2029}
             description="Become an experienced developer."
-            className={"absolute -bottom-2"}
+            className={"absolute -bottom-4"}
           />
         </ul>
       </div>

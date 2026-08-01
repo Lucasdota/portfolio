@@ -26,14 +26,7 @@ const About = () => {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        I have knowledge in Java, Spring Boot, and JWT, which enables me to
-        develop secure and efficient applications. I have experience with React,
-        creating responsive and intuitive interfaces. I am also fluent in
-        English, which is a valuable asset in the tech field. Currently, I am in
-        my second semester of studying Systems Analysis and Development, and I
-        am eager to start working in the field as soon as possible. I have two
-        main projects that you can check out in the projects tab: one is a
-        full-stack to-do list, and the other is a frontend supermarket website.
+        Shopify Developer with experience in developing and customizing themes, building Shopify Apps, and integrating Shopify stores with ERP systems. I work with Liquid, JavaScript, HTML, CSS, and Proxy to create scalable, maintainable, and business-oriented e-commerce solutions. I'm a native Portuguese speaker and fluent in English (EF SET English Certificate: 77/100 – C2 Proficient). I use AI as a productivity tool to better understand large codebases, identify bugs more efficiently, and accelerate development while maintaining code quality.
       </motion.p>
       <motion.div
         className="z-10 flex items-center justify-center my-12"

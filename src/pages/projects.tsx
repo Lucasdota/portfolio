@@ -1,10 +1,11 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import Head from "next/head";
 import GrocerGo from "@/components/projects/GrocerGo";
 import TodoApp from "@/components/projects/TodoApp";
+import ERPInventoryCheck from "@/components/projects/ERPInventoryCheck";
 
 const projects = () => {
-	return (
+  return (
     <>
       <Head>
         <title>Portfolio | Projects</title>
@@ -18,6 +19,33 @@ const projects = () => {
             exit: { opacity: 0, y: 10 },
           }}
         >
+          <motion.h2
+            className="text-4xl sm:text-2xl font-extrabold mx-auto tracking-wider antialiased name font-poppins text-center"
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.3, ease: "easeInOut", delay: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+            Shopify Inventory Check
+          </motion.h2>
+          <ERPInventoryCheck />
+
+          {/* HR */}
+          <motion.div
+            role="separator"
+            className="w-full h-[1px] bg-neutral-400"
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.3, ease: "easeInOut", delay: 0.45 }}
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          />
+
           <motion.h2
             className="text-4xl sm:text-2xl font-extrabold mx-auto tracking-wider antialiased name font-poppins"
             initial="hidden"
@@ -62,6 +90,6 @@ const projects = () => {
       </section>
     </>
   );
-}
+};
 
-export default projects
+export default projects;
