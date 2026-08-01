@@ -95,7 +95,7 @@ const ERPInventoryCheck = () => {
       <p className="text-base sm:text-sm px-4 whitespace-normal text-center">
         On a project that I was working on at my company, Shopify needed to
         check inventory in an ERP before allowing a product to be added to the
-        cart. In this case, the inventory data existed only in the merchant's
+        cart. In this case, the inventory data existed only in the merchant&apos;s
         ERP and was not stored in Shopify. Instead of connecting Shopify
         directly to the ERP, I introduced a Cloudflare Worker as an intermediary
         layer. This allowed me to centralize communication with the ERP while
