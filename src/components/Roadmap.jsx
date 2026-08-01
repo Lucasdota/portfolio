@@ -50,7 +50,7 @@ const Roadmap = () => {
           <Objectives
             year={2029}
             description="Become an experienced developer."
-            className={"absolute -bottom-2"}
+            className={"absolute -bottom-4"}
           />
         </ul>
       </div>
