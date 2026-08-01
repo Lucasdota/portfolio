@@ -77,7 +77,7 @@ const Navbar = () => {
           {/* LOGO */}
           <Link
             href="/"
-            className="group flex items-center gap-[0.4rem] tracking-wide"
+            className="group flex items-center gap-[0.7rem] tracking-wide"
           >
             <FaSeedling
               className={`dark:text-green-500 text-green-600 duration-100 group-hover:-scale-x-100 dark:group-hover:drop-shadow-[0_0px_5px_rgba(22,163,74,0.6)]`}
@@ -212,7 +212,7 @@ const Navbar = () => {
           {/* LOGO */}
           <Link
             href="/"
-            className="group flex items-center gap-[0.4rem] tracking-wide"
+            className="group flex items-center gap-[0.7rem] tracking-wide"
           >
             <FaSeedling
               className={`dark:text-green-500 text-green-600 duration-100 group-hover:-scale-x-100 dark:group-hover:drop-shadow-[0_0px_5px_rgba(22,163,74,0.6)] 3xl:h-6 3xl:w-6`}

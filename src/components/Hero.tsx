@@ -1,10 +1,7 @@
 import Javascript from "../../public/javascript.svg";
 import Typescript from "../../public/typescript.svg";
-import Java from "../../public/java.svg";
+import Shopify from "../../public/shopify.svg";
 import Git from "../../public/git.svg";
-import SpringBoot from "../../public/spring.svg";
-import JWT from "../../public/jwt.svg";
-import PostgreSQL from "../../public/postgresql.svg";
 import Tooltip from "@mui/material/Tooltip";
 import Profile from "../../public/profile.webp";
 import Image from "next/image";
@@ -28,7 +25,7 @@ const Hero = () => {
     >
       <div className="flex flex-col gap-8">
         <h2 className="text-4xl 3xl:text-5xl font-extrabold mx-auto tracking-wider antialiased name font-poppins">
-          Lucas Dota
+          Portfolio
         </h2>
         <div
           id="prof-pic"
@@ -42,7 +39,7 @@ const Hero = () => {
             priority
             loading="eager"
             onLoad={() => setImgLoaded(true)}
-            className="rounded-full w-full h-full"
+            className="rounded-full w-full h-full object-cover"
           />
           {/* skeleton */}
           {!imgLoaded && (
@@ -56,39 +53,12 @@ const Hero = () => {
           <h3 className="font-bold text-xl 3xl:text-2xl antialiased">
             TECH STACK:
           </h3>
-          <li className="bg-white dark:bg-slate-200 rounded">
-            <Tooltip title="Java" arrow>
+          <li className="rounded">
+            <Tooltip title="Shopify" arrow>
               <Image
-                src={Java}
-                alt="java icon"
+                src={Shopify}
+                alt="shopify icon"
                 className="w-7 h-7 3xl:w-8 3xl:h-8"
-              />
-            </Tooltip>
-          </li>
-          <li>
-            <Tooltip title="Spring Boot" arrow>
-              <Image
-                src={SpringBoot}
-                alt="spring boot icon"
-                className="w-7 h-7 3xl:w-8 3xl:h-8"
-              />
-            </Tooltip>
-          </li>
-          <li>
-            <Tooltip title="JWT" arrow>
-              <Image
-                src={JWT}
-                alt="JWT icon"
-                className="w-7 h-7 3xl:w-8 3xl:h-8 p-0.5"
-              />
-            </Tooltip>
-          </li>
-          <li>
-            <Tooltip title="PostgreSQL">
-              <Image
-                src={PostgreSQL}
-                alt="postgres icon"
-                className="w-7 h-7 3xl:w-8 3xl:h-8 p-0.5"
               />
             </Tooltip>
           </li>
