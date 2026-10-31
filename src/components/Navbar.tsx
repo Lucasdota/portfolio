@@ -142,6 +142,20 @@ const Navbar = () => {
 									`}
                   ></span>
                 </Link>
+                <Link
+                  onClick={handleClick}
+                  id="exp"
+                  href="/experience"
+                  aria-label="Go to Experience Page"
+                  className={`group relative pt-1 text-2xl font-nunito tracking-widest`}
+                >
+                  Experience
+                  <span
+                    className={`transition-width absolute inset-[2rem] left-0 h-[2px] w-0 bg-neutral-500 duration-100 dark:bg-neutral-300
+									${router.asPath === "/experience" ? "w-full" : "w-0"}
+									`}
+                  ></span>
+                </Link>
               </div>
 
               {/* ICONS */}
@@ -221,7 +235,7 @@ const Navbar = () => {
           </Link>
 
           {/* PAGE LINKS */}
-          <div className="flex h-full items-center gap-1">
+          <div className="flex h-full items-center gap-6 3xl:gap-8">
             <Link
               id="proj"
               href="/projects"
@@ -232,6 +246,19 @@ const Navbar = () => {
               <span
                 className={`transition-width absolute left-0 h-[1px] w-0 bg-neutral-500 duration-100 group-hover:w-full dark:bg-neutral-300 bottom-0.5 3xl:h-[2px]
 								${router.asPath === "/projects" ? "w-full" : "w-0"}
+								`}
+              ></span>
+            </Link>
+            <Link
+              id="exp"
+              href="/experience"
+              aria-label="Go to Experience Page"
+              className={`group relative pt-1 text-[1rem] 3xl:text-xl font-nunito tracking-widest`}
+            >
+              Experience
+              <span
+                className={`transition-width absolute left-0 h-[1px] w-0 bg-neutral-500 duration-100 group-hover:w-full dark:bg-neutral-300 bottom-0.5 3xl:h-[2px]
+								${router.asPath === "/experience" ? "w-full" : "w-0"}
 								`}
               ></span>
             </Link>

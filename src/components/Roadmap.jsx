@@ -43,9 +43,9 @@ const Roadmap = () => {
             className={"absolute top-24"}
           />
           <Objectives
-            year={2027}
+            year={2026}
             description="Graduate from university."
-            className={"absolute top-[12rem]"}
+            className={"absolute top-[10rem]"}
           />
           <Objectives
             year={2029}
