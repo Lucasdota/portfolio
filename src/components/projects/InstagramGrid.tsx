@@ -93,7 +93,7 @@ const ERPInventoryCheck = () => {
       </div>
 
       <p className="text-base sm:text-sm px-4 whitespace-normal text-center">
-        I built a Shopify app called "InstaGrid" that lets a merchant connect their Instagram Business/Creator account and display a curated grid of their Instagram posts directly on their storefront
+        I built a Shopify app called &quot;InstaGrid&quot; that lets a merchant connect their Instagram Business/Creator account and display a curated grid of their Instagram posts directly on their storefront
       </p>
 
       <div className="text-base sm:text-sm flex gap-2 items-start justify-start flex-wrap">
