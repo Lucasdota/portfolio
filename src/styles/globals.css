@@ -49,6 +49,12 @@ body{
 }
 
 
+/* EXPERIENCE CARD CURSOR */
+.green-cursor {
+	cursor: url("/green-cursor.svg") 5 4, auto;
+}
+
+
 /* MOUSE SELECTION */
 ::-moz-selection { /* Code for Firefox */
   color: #222024;
