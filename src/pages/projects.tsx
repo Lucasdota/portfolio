@@ -6,7 +6,7 @@ import InstagramGrid from "@/components/projects/InstagramGrid";
 
 const projects = () => {
   return (
-    <Page headTitle="Portfolio | Projects" title="Projects" eyebrow="Things I've built">
+    <Page headTitle="Portfolio | Projects" title="Projects" eyebrow="Some things I've built">
       <InstagramGrid />
       <ERPInventoryCheck />
       <TodoApp />
