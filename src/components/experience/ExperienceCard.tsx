@@ -1,16 +1,15 @@
 import { motion } from "framer-motion";
-import { useEffect, useState, type MouseEvent, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import type { IconType } from "react-icons";
 import Circles from "@/components/Circles";
+import Card from "@/components/ui/Card";
+import IconChip from "@/components/ui/IconChip";
+import Pill from "@/components/ui/Pill";
+import Technologies, { type Technology } from "@/components/ui/Technologies";
 
 export type Highlight = {
   icon: IconType;
   content: ReactNode;
-};
-
-export type Technology = {
-  name: string;
-  className: string;
 };
 
 type Props = {
@@ -51,13 +50,6 @@ const ExperienceCard = ({ company, role, startDate, endDate, highlights, technol
     setDuration(getDuration(startDate, endDate ?? new Date()));
   }, [startDate, endDate]);
 
-  // feeds the cursor position to the spotlight gradient
-  function handleMouseMove(e: MouseEvent<HTMLElement>) {
-    const rect = e.currentTarget.getBoundingClientRect();
-    e.currentTarget.style.setProperty("--x", `${e.clientX - rect.left}px`);
-    e.currentTarget.style.setProperty("--y", `${e.clientY - rect.top}px`);
-  }
-
   return (
     <motion.li
       className="flex"
@@ -74,22 +66,9 @@ const ExperienceCard = ({ company, role, startDate, endDate, highlights, technol
         <Circles />
       </div>
 
-      <article
-        onMouseMove={handleMouseMove}
-        className="green-cursor group relative -ml-4 w-full overflow-hidden rounded-xl p-6 sm:p-4 border border-neutral-300 dark:border-neutral-700 bg-slate-50 dark:bg-dark-bg shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] transition-colors duration-300 hover:border-green-600/60 dark:hover:border-green-500/50"
-      >
-        {/* SPOTLIGHT */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          style={{
-            background:
-              "radial-gradient(420px circle at var(--x) var(--y), rgba(22, 163, 74, 0.12), transparent 45%)",
-          }}
-        />
-
+      <Card className="-ml-4 w-full">
         {/* HEADER */}
-        <header className="relative flex items-center gap-4 sm:gap-3">
+        <header className="flex items-center gap-4 sm:gap-3">
           <div className="h-11 w-11 shrink-0 rounded-full p-[2px] bg-gradient-to-b from-[#3c88a7] to-[#ca8e8e]">
             <span className="flex h-full w-full items-center justify-center rounded-full bg-slate-50 dark:bg-neutral-850 font-poppins text-lg font-extrabold antialiased">
               {company[0]}
@@ -106,10 +85,10 @@ const ExperienceCard = ({ company, role, startDate, endDate, highlights, technol
         </header>
 
         {/* PERIOD */}
-        <div className="relative mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-          <span className="rounded-lg border border-dashed border-neutral-400 dark:border-neutral-600 px-2 py-0.5">
+        <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+          <Pill>
             {formatMonth(startDate)} — {endDate ? formatMonth(endDate) : "Present"}
-          </span>
+          </Pill>
           {isCurrent && (
             <span className="flex items-center gap-1.5 text-green-700 dark:text-green-400">
               <span className="relative flex h-2 w-2">
@@ -132,11 +111,11 @@ const ExperienceCard = ({ company, role, startDate, endDate, highlights, technol
         </div>
 
         {/* HR */}
-        <div role="separator" className="relative my-5 w-full h-[1px] bg-neutral-300 dark:bg-neutral-700" />
+        <div role="separator" className="my-5 w-full h-[1px] bg-neutral-300 dark:bg-neutral-700" />
 
         {/* HIGHLIGHTS */}
-        <ul className="relative flex flex-col gap-4">
-          {highlights.map(({ icon: Icon, content }, index) => (
+        <ul className="flex flex-col gap-4">
+          {highlights.map(({ icon, content }, index) => (
             <motion.li
               key={index}
               className="group/item flex items-start gap-3 text-base sm:text-sm"
@@ -148,24 +127,20 @@ const ExperienceCard = ({ company, role, startDate, endDate, highlights, technol
                 visible: { opacity: 1, x: 0 },
               }}
             >
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-green-600/10 text-green-700 dark:bg-green-400/10 dark:text-green-400 transition duration-200 group-hover/item:scale-110 group-hover/item:-rotate-6">
-                <Icon size={14} />
-              </span>
+              <IconChip
+                icon={icon}
+                className="group-hover/item:scale-110 group-hover/item:-rotate-6"
+              />
               <p className="whitespace-normal [text-wrap:pretty]">{content}</p>
             </motion.li>
           ))}
         </ul>
 
         {/* TECHNOLOGIES */}
-        <div className="relative mt-6 text-base sm:text-sm flex gap-2 items-start justify-start flex-wrap">
-          <p>Technologies:</p>
-          {technologies.map(({ name, className }) => (
-            <span key={name} className={className}>
-              {name}
-            </span>
-          ))}
+        <div className="mt-6">
+          <Technologies items={technologies} />
         </div>
-      </article>
+      </Card>
     </motion.li>
   );
 };

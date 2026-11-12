@@ -18,38 +18,120 @@ body{
 }
 
 
-/* RESUME BUTTON */
-.btn.btn-effect {
-  transition: all 0.2s linear 0s;
+/* BACKGROUND */
+html {
+	background-color: #e8ebef;
 }
 
-.btn.btn-effect:before {
-	content: "\f178";
-    font-family: FontAwesome;
-    font-size: 12px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 0;
-    top: 0;
-    opacity: 0;
-    height: 100%;
-    width: 40px;
-    transition: all 0.2s linear 0s;
+html.dark {
+	background-color: #0f1012;
 }
 
-.btn.btn-effect:hover {
-	text-indent: -20px;
+.site-bg {
+	position: fixed;
+	inset: 0;
+	z-index: -10;
+	overflow: hidden;
+	pointer-events: none;
 }
 
-.btn.btn-effect:hover:before {
-	opacity: 1;
-  text-indent: 0px;
+/* dot grid that fades out away from the top */
+.site-bg::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(rgba(32, 33, 36, 0.16) 1px, transparent 1px);
+	background-size: 22px 22px;
+	-webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 0%, #000 25%, transparent 80%);
+	mask-image: radial-gradient(ellipse 90% 75% at 50% 0%, #000 25%, transparent 80%);
+}
+
+.dark .site-bg::after {
+	background-image: radial-gradient(rgba(255, 255, 255, 0.075) 1px, transparent 1px);
+}
+
+.glow {
+	position: absolute;
+	width: 44rem;
+	height: 44rem;
+	border-radius: 9999px;
+	animation: glow-drift 26s ease-in-out infinite alternate;
+}
+
+.glow-green {
+	top: -24rem;
+	left: 50%;
+	margin-left: -22rem;
+	background: radial-gradient(closest-side, rgba(22, 163, 74, 0.24), transparent);
+}
+
+.glow-blue {
+	top: 28%;
+	right: -22rem;
+	background: radial-gradient(closest-side, rgba(60, 136, 167, 0.22), transparent);
+	animation-delay: -9s;
+}
+
+.glow-pink {
+	bottom: -20rem;
+	left: -20rem;
+	background: radial-gradient(closest-side, rgba(202, 142, 142, 0.26), transparent);
+	animation-delay: -18s;
+}
+
+.dark .glow-green {
+	background: radial-gradient(closest-side, rgba(22, 163, 74, 0.2), transparent);
+}
+
+.dark .glow-blue {
+	background: radial-gradient(closest-side, rgba(60, 136, 167, 0.16), transparent);
+}
+
+.dark .glow-pink {
+	background: radial-gradient(closest-side, rgba(202, 142, 142, 0.12), transparent);
+}
+
+@keyframes glow-drift {
+	from {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	to {
+		transform: translate3d(3rem, 2.5rem, 0) scale(1.15);
+	}
 }
 
 
-/* EXPERIENCE CARD CURSOR */
+/* PROFILE PICTURE RING */
+.profile-ring {
+	overflow: hidden;
+	isolation: isolate;
+	box-shadow: 0 0 36px -6px rgba(22, 163, 74, 0.45);
+}
+
+.profile-ring::before {
+	content: "";
+	position: absolute;
+	inset: -50%;
+	z-index: -1;
+	background: conic-gradient(from 0deg, #3c88a7, #ca8e8e, #16a34a, #3c88a7);
+	animation: ring-spin 6s linear infinite;
+}
+
+@keyframes ring-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.glow,
+	.profile-ring::before {
+		animation: none;
+	}
+}
+
+
+/* CARD CURSOR */
 .green-cursor {
 	cursor: url("/green-cursor.svg") 5 4, auto;
 }

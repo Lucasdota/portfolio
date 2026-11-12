@@ -1,15 +1,14 @@
 import React from 'react'
+import { FaSeedling } from "react-icons/fa";
 
 const Footer = () => {
 	return (
-    <footer className="flex items-center h-24 dark:bg-neutral-850 bg-neutral-200 dark:text-slate-50 text-neutral-850 justify-center text-sm 3xl:text-lg xs:text-[0.6rem] antialiased min-w-[300px] xs:pb-4">
-      <div className="flex-col gap-4 items-center">
-        <p className="text-slate-850 dark:text-neutral-400 text-center">
-          Developer, develop yourself.
-        </p>
-        <p className="text-slate-850 dark:text-neutral-400 text-center">
-          © All rights reserved.
-        </p>
+    <footer className="flex flex-col items-center gap-4 px-8 pb-10 md:px-6 xs:px-4 text-sm 3xl:text-lg xs:text-xs antialiased min-w-[300px]">
+      <div className="h-px w-full max-w-lg bg-gradient-to-r from-transparent via-neutral-400 to-transparent dark:via-neutral-600" />
+      <FaSeedling className="text-green-600 dark:text-green-500" />
+      <div className="flex flex-col gap-1 items-center text-neutral-600 dark:text-neutral-400 text-center">
+        <p>Developer, develop yourself.</p>
+        <p>© All rights reserved.</p>
       </div>
     </footer>
   );
