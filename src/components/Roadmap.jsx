@@ -1,60 +1,31 @@
-import { useScroll, motion } from "framer-motion";
-import { useRef } from "react";
+import { FaRoute } from "react-icons/fa";
 import Objectives from "@/components/Objectives";
+import Card from "@/components/ui/Card";
+import SectionTitle from "@/components/ui/SectionTitle";
+
+const milestones = [
+  { year: 2023, description: "Started learning how to code." },
+  { year: 2025, description: "Got my first job as a developer." },
+  { year: 2026, description: "Graduate from university." },
+  { year: 2029, description: "Become an experienced developer." },
+];
 
 const Roadmap = () => {
-  const divContainer = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: divContainer,
-    offset: ["start end", "end end"],
-  });
-
   return (
-    <motion.div
-      className="w-full mb-12"
-      initial="hidden"
-      animate="visible"
-      transition={{ duration: 0.3, ease: "easeInOut", delay: 0.6 }}
-      variants={{
-        hidden: { opacity: 0, y: 10 },
-        visible: { opacity: 1, y: 0 },
-      }}
-    >
-      <h2 className="text-xl font-bold mb-8 antialiased 3xl:text-2xl">
-        ROADMAP
-      </h2>
-      <div
-        ref={divContainer}
-        className="h-[20rem] relative text-[0.95rem] 3xl:text-lg xs:text-[0.7rem] 3xl:h-[23rem]"
-      >
-        <motion.div
-          style={{ scaleY: scrollYProgress }}
-          className="bg-secondary absolute w-[0.25rem] h-full rounded-lg top-0 left-6 origin-top antialiased"
-        />
-        <ul className="h-full ml-[3.01rem] relative ">
+    <Card delay={0.55}>
+      <SectionTitle icon={FaRoute}>Roadmap</SectionTitle>
+      <ul className="flex flex-col gap-5">
+        {milestones.map(({ year, description }, index) => (
           <Objectives
-            year={2023}
-            description="Started learning how to code."
-            className={"absolute top-0"}
+            key={year}
+            year={year}
+            description={description}
+            index={index}
+            isLast={index === milestones.length - 1}
           />
-          <Objectives
-            year={2025}
-            description="Got my first job as a developer."
-            className={"absolute top-24"}
-          />
-          <Objectives
-            year={2026}
-            description="Graduate from university."
-            className={"absolute top-[10rem]"}
-          />
-          <Objectives
-            year={2029}
-            description="Become an experienced developer."
-            className={"absolute -bottom-4"}
-          />
-        </ul>
-      </div>
-    </motion.div>
+        ))}
+      </ul>
+    </Card>
   );
 };
 

@@ -7,10 +7,6 @@ export default function Document() {
       <Head>
         <meta name="description" content="Personal Portfolio" />
         <link rel="icon" href="/icon.png" />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
-        ></link>
       </Head>
       <body>
         <Main />
