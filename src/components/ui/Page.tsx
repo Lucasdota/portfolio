@@ -19,7 +19,7 @@ const Page = ({ headTitle, title, eyebrow, children }: Props) => {
       </Head>
       <section className="flex min-h-screen flex-col items-center px-8 pt-28 pb-16 md:px-6 xs:px-4">
         <motion.article
-          className="max-w-lg w-[32rem] sm:w-full flex flex-col gap-8"
+          className="max-w-[35rem] w-[35rem] sm:w-full flex flex-col gap-8"
           exit="exit"
           transition={{ duration: 0.3, ease: "easeInOut" }}
           variants={{

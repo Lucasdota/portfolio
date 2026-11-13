@@ -12,9 +12,8 @@ const About = () => {
       <SectionTitle icon={FaUser}>About</SectionTitle>
       <p className="text-[0.95rem] 3xl:text-lg antialiased whitespace-normal [text-wrap:pretty]">
         <Keyword color="green">Shopify Developer</Keyword> with experience in
-        developing and customizing themes, building{" "}
-        <Keyword color="green">Shopify Apps</Keyword>, and integrating Shopify
-        stores with <Keyword color="pink">ERP systems</Keyword>. I work with{" "}
+        developing and customizing themes and building{" "}
+        <Keyword color="green">Shopify Apps</Keyword>. I work with{" "}
         <Keyword color="blue">Liquid</Keyword>,{" "}
         <Keyword color="yellow">JavaScript</Keyword> and{" "}
         <Keyword color="sky">CSS</Keyword> to create scalable, maintainable, and
