@@ -2,7 +2,6 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
 import {
   FaShopify,
-  FaPlug,
   FaCogs,
   FaCubes,
   FaFilter,
@@ -27,17 +26,6 @@ const experiences = [
             <Keyword color="yellow">JavaScript</Keyword>,{" "}
             <Keyword color="orange">HTML</Keyword>, and{" "}
             <Keyword color="sky">CSS</Keyword>.
-          </>
-        ),
-      },
-      {
-        icon: FaPlug,
-        content: (
-          <>
-            Design and implement integrations between{" "}
-            <Keyword color="green">Shopify stores</Keyword> and{" "}
-            <Keyword color="pink">ERP systems</Keyword> to meet each
-            client&apos;s specific business requirements.
           </>
         ),
       },

@@ -1,6 +1,8 @@
 import Javascript from "../../public/javascript.svg";
 import Typescript from "../../public/typescript.svg";
 import Shopify from "../../public/shopify.svg";
+import Liquid from "../../public/liquid.svg";
+import ShopifyApps from "../../public/shopify-apps.svg";
 import Git from "../../public/git.svg";
 import ReactIcon from "../../public/react.svg";
 import Tooltip from "@mui/material/Tooltip";
@@ -14,6 +16,8 @@ import Card from "@/components/ui/Card";
 
 const techStack = [
   { name: "Shopify", icon: Shopify },
+  { name: "Liquid", icon: Liquid },
+  { name: "Shopify Apps", icon: ShopifyApps },
   { name: "React", icon: ReactIcon },
   { name: "Typescript", icon: Typescript },
   { name: "Javascript", icon: Javascript },
@@ -75,19 +79,20 @@ const Hero = () => {
       {/* HR */}
       <div role="separator" className="my-5 w-full h-[1px] bg-neutral-300 dark:bg-neutral-700" />
 
-      <div id="tech-stack" className="flex flex-wrap items-center gap-x-4 gap-y-3 sm:justify-center">
+      <div id="tech-stack" className="flex flex-col gap-3 sm:items-center">
         <h3 className="text-xs 3xl:text-base font-bold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
           Tech stack
         </h3>
-        <ul className="flex flex-wrap gap-2.5">
+        {/* on phones the tiles share one row and shrink to fit it */}
+        <ul className="flex flex-wrap gap-2.5 sm:grid sm:w-full sm:grid-cols-7 sm:gap-2">
           {techStack.map(({ name, icon }) => (
             <li key={name}>
               <Tooltip title={name} arrow>
-                <span className="flex h-11 w-11 3xl:h-14 3xl:w-14 items-center justify-center rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white/60 dark:bg-white/5 transition duration-200 hover:-translate-y-1 hover:border-green-600/50 dark:hover:border-green-500/40">
+                <span className="flex h-11 w-11 sm:h-auto sm:w-full sm:aspect-square 3xl:h-14 3xl:w-14 items-center justify-center rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white/60 dark:bg-white/5 transition duration-200 hover:-translate-y-1 hover:border-green-600/50 dark:hover:border-green-500/40">
                   <Image
                     src={icon}
                     alt={`${name.toLowerCase()} icon`}
-                    className="h-6 w-6 3xl:h-8 3xl:w-8"
+                    className="h-6 w-6 sm:h-[55%] sm:w-[55%] 3xl:h-8 3xl:w-8"
                   />
                 </span>
               </Tooltip>
