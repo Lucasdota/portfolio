@@ -17,12 +17,12 @@ export type ProjectLink = {
 type Props = {
   title: string;
   image: StaticImageData;
-  links: ProjectLink[];
+  links?: ProjectLink[];
   technologies: Technology[];
   children: ReactNode;
 };
 
-const ProjectCard = ({ title, image, links, technologies, children }: Props) => {
+const ProjectCard = ({ title, image, links = [], technologies, children }: Props) => {
   return (
     <Card delay={0.45}>
       <ZoomableImage src={image} alt={`${title} preview`} />
@@ -31,21 +31,23 @@ const ProjectCard = ({ title, image, links, technologies, children }: Props) => 
         <h3 className="text-2xl sm:text-xl font-extrabold tracking-wide antialiased name font-poppins">
           {title}
         </h3>
-        <div className="flex flex-wrap gap-2">
-          {links.map(({ href, label, ariaLabel, icon: Icon }) => (
-            <Link
-              key={href}
-              href={href}
-              target="_blank"
-              aria-label={ariaLabel}
-              className="group/link inline-flex items-center gap-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white/60 dark:bg-white/5 px-3 py-1 text-sm transition-colors duration-200 hover:border-green-600/60 hover:text-green-700 dark:hover:border-green-500/50 dark:hover:text-green-400"
-            >
-              <Icon size={13} />
-              {label}
-              <FiArrowUpRight className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
-            </Link>
-          ))}
-        </div>
+        {links.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {links.map(({ href, label, ariaLabel, icon: Icon }) => (
+              <Link
+                key={href}
+                href={href}
+                target="_blank"
+                aria-label={ariaLabel}
+                className="group/link inline-flex items-center gap-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white/60 dark:bg-white/5 px-3 py-1 text-sm transition-colors duration-200 hover:border-green-600/60 hover:text-green-700 dark:hover:border-green-500/50 dark:hover:text-green-400"
+              >
+                <Icon size={13} />
+                {label}
+                <FiArrowUpRight className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
 
       <p className="mt-3 text-base sm:text-sm whitespace-normal [text-wrap:pretty] text-neutral-700 dark:text-neutral-300">

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import type { ReactNode } from "react";
-import { FaSeedling } from "react-icons/fa";
 
 type Props = {
   headTitle: string;
@@ -37,8 +36,7 @@ const Page = ({ headTitle, title, eyebrow, children }: Props) => {
             }}
           >
             {eyebrow && (
-              <span className="flex items-center gap-2 rounded-full border border-green-600/30 bg-green-600/10 px-3 py-0.5 text-xs font-bold uppercase tracking-[0.2em] text-green-700 dark:border-green-400/25 dark:bg-green-400/10 dark:text-green-400">
-                <FaSeedling size={10} />
+              <span className="rounded-full border border-green-600/30 bg-green-600/10 px-3 py-0.5 text-xs font-bold uppercase tracking-[0.2em] text-green-700 dark:border-green-400/25 dark:bg-green-400/10 dark:text-green-400">
                 {eyebrow}
               </span>
             )}
