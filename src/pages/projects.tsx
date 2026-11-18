@@ -3,10 +3,12 @@ import GrocerGo from "@/components/projects/GrocerGo";
 import TodoApp from "@/components/projects/TodoApp";
 import ERPInventoryCheck from "@/components/projects/ERPInventoryCheck";
 import InstagramGrid from "@/components/projects/InstagramGrid";
+import ShopifyStores from "@/components/projects/ShopifyStores";
 
 const projects = () => {
   return (
     <Page headTitle="Portfolio | Projects" title="Projects" eyebrow="Some things I've built">
+      <ShopifyStores />
       <InstagramGrid />
       <ERPInventoryCheck />
       <TodoApp />
